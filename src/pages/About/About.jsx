@@ -1,9 +1,16 @@
 import React from "react";
+import AboutBanner from "../../components/AboutBanner/AboutBanner";
+
+
+
+
 
 export default function About() {
 	return (
 		<div>
-			<h1>A Propos</h1>
+			<AboutBanner />
+
 		</div>
 	);
 }
+
