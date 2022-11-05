@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Header from './components/Header/Header';
 import FicheLogement from './pages/FicheLogement/FicheLogement';
+import Footer from "./components/Footer/Footer";
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 
@@ -15,10 +16,11 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/logement" element={<FicheLogement />} />
+					<Route path="/logement/:id" element={<FicheLogement />} />
 					<Route path="*" element={<ErrorPage />} />
 				</Routes>
-			</main>		
+			</main>
+			<Footer />		
 		</div>
 	);
 }
