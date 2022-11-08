@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Carrousel from "../../components/Carrousel/Carrousel";
+import Host from "../../components/Host/Host";
 import Tag from "../../components/Tag/Tag";
 import data from "../../datas/logements.json";
 
@@ -16,9 +17,8 @@ export default function FicheLogement() {
 	return (
 		<div key={params.id} >
 			<Carrousel slides={slidePics} />
-			<section>
+			<section className="hostInfo-container">
 				<div className="title-tags-container">
-
 					<div className="title-container redFont">
 						<h1>{pickedAppart.title}</h1>
 						<h3>{pickedAppart.location}</h3>
@@ -29,8 +29,14 @@ export default function FicheLogement() {
 							<Tag key={tag} tag={tag} />
 						))}
 					</div>
-
 				</div>
+
+				<div className="rate-host-container">
+					<div>
+						<Host/>
+					</div>
+				</div>
+				
 			</section>
 		</div>
 	);

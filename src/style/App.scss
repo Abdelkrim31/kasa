@@ -69,3 +69,14 @@
 	display: flex;
 }
 
+.rate-host-container {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+}
+
+.hostInfo-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
