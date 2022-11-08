@@ -17,12 +17,19 @@ export default function FicheLogement() {
 		<div key={params.id} >
 			<Carrousel slides={slidePics} />
 			<section>
-				<div>
+				<div className="title-tags-container">
+
+					<div className="title-container redFont">
+						<h1>{pickedAppart.title}</h1>
+						<h3>{pickedAppart.location}</h3>
+					</div>
+
 					<div className="tags-container">
 						{tags.map((tag) => (
 							<Tag key={tag} tag={tag} />
 						))}
 					</div>
+
 				</div>
 			</section>
 		</div>

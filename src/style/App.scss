@@ -1,3 +1,14 @@
+.bl-msk {
+	background: rgba(0, 0, 0, 0.3);
+	mix-blend-mode: darken;
+	border-radius: 25px;
+}
+
+.wh-msk {
+	background: #f7f7f7;
+	border-radius: 10px;
+}
+
 .errorContainer {
 	display: flex;
 	color: #ff6060;
@@ -48,9 +59,13 @@
 	text-decoration: none;
 }
 
+.title-tags-container {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+}
+
 .tags-container {
 	display: flex;
 }
-
-
 
