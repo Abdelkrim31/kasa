@@ -18,7 +18,7 @@ export default function FicheLogement() {
 			<Carrousel slides={slidePics} />
 			<section>
 				<div>
-					<div>
+					<div className="tags-container">
 						{tags.map((tag) => (
 							<Tag key={tag} tag={tag} />
 						))}
