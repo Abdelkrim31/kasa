@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Host from "../../components/Host/Host";
+import Rate from "../../components/Rate/Rate";
 import Tag from "../../components/Tag/Tag";
 import data from "../../datas/logements.json";
 
@@ -33,11 +34,16 @@ export default function FicheLogement() {
 				</div>
 
 				<div className="rate-host-container">
+					
 					<div className="redFont">
 						<Host
 							hostName={pickedAppart.host.name}
 							hostPic={pickedAppart.host.picture}
 						/>
+					</div>
+
+					<div>
+						<Rate score={pickedAppart.rating} />
 					</div>
 				</div>
 
