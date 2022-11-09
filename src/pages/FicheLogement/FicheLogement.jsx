@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Carrousel from "../../components/Carrousel/Carrousel";
+import Collapse from "../../components/Collapse/Collapse";
 import Host from "../../components/Host/Host";
 import Rate from "../../components/Rate/Rate";
 import Tag from "../../components/Tag/Tag";
@@ -48,6 +49,12 @@ export default function FicheLogement() {
 				</div>
 
 			</section>
+
+			<div className="collapse-fiche-container">
+				<Collapse />
+				<Collapse />
+			</div>
+
 		</div>
 	);
 		
