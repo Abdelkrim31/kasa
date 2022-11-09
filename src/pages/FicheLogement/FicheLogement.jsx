@@ -14,7 +14,7 @@ export default function FicheLogement() {
 	const tags = pickedAppart.tags;
 
 	console.log(pickedAppart);
-	if(pickedAppart !== undefined) {
+	
 	return (
 		<div key={params.id} >
 			<Carrousel slides={slidePics} />
@@ -34,7 +34,7 @@ export default function FicheLogement() {
 				</div>
 
 				<div className="rate-host-container">
-					
+
 					<div className="redFont">
 						<Host
 							hostName={pickedAppart.host.name}
@@ -42,7 +42,7 @@ export default function FicheLogement() {
 						/>
 					</div>
 
-					<div>
+					<div className="rate-container">
 						<Rate score={pickedAppart.rating} />
 					</div>
 				</div>
@@ -50,7 +50,7 @@ export default function FicheLogement() {
 			</section>
 		</div>
 	);
-	}	
+		
 }
 
 
