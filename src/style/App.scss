@@ -59,6 +59,17 @@
 	text-decoration: none;
 }
 
+.equipList {
+	list-style-type: none;
+}
+
+.fiche-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
 .title-tags-container {
 	display: flex;
 	flex-direction: column;

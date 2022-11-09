@@ -14,10 +14,17 @@ export default function FicheLogement() {
 	const slidePics = pickedAppart.pictures;
 	const tags = pickedAppart.tags;
 
+	const equipments = pickedAppart.equipments;
+	const equip = equipments.map((item, index) => (
+		<li key={index} className="equipList">
+			{item}
+		</li>
+	));
+
 	console.log(pickedAppart);
 	
 	return (
-		<div key={params.id} >
+		<div key={params.id} className="fiche-container">
 			<Carrousel slides={slidePics} />
 			<section className="hostInfo-container">
 
@@ -36,7 +43,7 @@ export default function FicheLogement() {
 
 				<div className="rate-host-container">
 
-					<div className="redFont">
+					<div className="host-container redFont">
 						<Host
 							hostName={pickedAppart.host.name}
 							hostPic={pickedAppart.host.picture}
@@ -55,7 +62,7 @@ export default function FicheLogement() {
 				 aboutTitle="Description"
 				 aboutText={pickedAppart.description}
 				/>
-				<Collapse />
+				<Collapse aboutTitle="Équipements" aboutText={equip}/>
 			</div>
 
 		</div>
