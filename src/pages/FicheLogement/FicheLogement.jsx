@@ -51,7 +51,10 @@ export default function FicheLogement() {
 			</section>
 
 			<div className="collapse-fiche-container">
-				<Collapse />
+				<Collapse 
+				 aboutTitle="Description"
+				 aboutText={pickedAppart.description}
+				/>
 				<Collapse />
 			</div>
 
