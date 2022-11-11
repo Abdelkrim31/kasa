@@ -8,24 +8,20 @@
 body {
 	@include body-position;
 
-
-	@media (min-width: $breakpoint-mobile) {
-		max-width: 100%;
-	}
-
 	@media (min-width: $breakpoint-desktop) {
 		max-width: 100%;
 	}
-
 }
-main {
-	margin: 0 7%;
 
-	@media screen and (max-width: 768px) {
-        margin: 5%;
-    }
+main {
+	margin: 5%;
+
+	@media screen and (min-width: $breakpoint-desktop) {
+		margin: 0 100px;
+	}
 }
 
 .redFont {
 	color: $primary-color;
 }
+
