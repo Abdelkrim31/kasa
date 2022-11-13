@@ -25,6 +25,16 @@ main {
 	color: $primary-color;
 }
 
+.fiche-container {
+	@include flex-center;
+	flex-direction: column;
+}
+
+.title-container {
+	display: flex;
+	flex-direction: column;
+}
+
 .bl-msk {
 	background: $background-color;
 	mix-blend-mode: darken;
