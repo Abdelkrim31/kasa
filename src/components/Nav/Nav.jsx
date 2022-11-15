@@ -1,16 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "../../style/main.scss";
 
 export default function Nav() {
+	
   return (
 		<nav className="nav-header">
-			<Link to="/" className="nav-header_link-home">
+			<NavLink 
+			 exact 
+			 className="nav-header_link-home" 
+			 activeClassName="active-link"
+			 to="/" >
 				Accueil
-			</Link>
-			<Link to="/about" className="nav-header_link-about">
+			</NavLink>
+			
+			<NavLink  
+			 className="nav-header_link-about" 
+			 activeClassName="active-link"
+			 
+			 to="/about">
 				A Propos
-			</Link>
+			</NavLink>
 		</nav>
 	);
 }
+

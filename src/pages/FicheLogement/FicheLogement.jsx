@@ -17,15 +17,16 @@ export default function FicheLogement() {
 		const getData = async () => {
 			const res = await data.find(({ id }) => id === params.id);
 
+			//redirection vers la page 404 en cas d'id incorrect
 			if (res === undefined) {
-				navigate("/404", { state: { message: "Can't get data" } }); //renvoi vers la page 404 en cas d'URL de logement invalide
+				navigate("/404", { state: { message: "Can't get data" } }); 
 			}
 			console.log("res =>", res);
 			setPickedAppart(res);
 		};
 		getData();
 		// eslint-disable-next-line
-	}, []); // array vide du useEffect pour ne lancer qu'une seule fois
+	}, []); 
 
 	console.log("pickedAppart", pickedAppart);
 	const slidePics = pickedAppart && pickedAppart.pictures;
@@ -71,12 +72,11 @@ export default function FicheLogement() {
 					</div>
 	
 				</section>
-	
+				
 				<div className="collapse-fiche-container">
 					<Collapse 
 					 aboutTitle="Description"
-					 aboutText={pickedAppart.description}
-					/>
+					 aboutText={pickedAppart.description}/>
 					<Collapse aboutTitle="Équipements" aboutText={equip}/>
 				</div>
 	
