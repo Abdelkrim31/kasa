@@ -1,6 +1,6 @@
 import React from "react";
-import emptyStar from "../../assets/images/emptyStar.svg";
-import fullStar from "../../assets/images/star-rate.svg"
+import emptyStar from "../../tools/images/emptyStar.svg";
+import fullStar from "../../tools/images/star-rate.svg"
 import "../../style/main.scss";
 
 export default function Rate({ score }) {

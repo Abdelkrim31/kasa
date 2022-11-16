@@ -1,0 +1,24 @@
+.collapse {
+    margin: 2rem 5rem 2rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Media queries mobile*/
+
+@media (max-width: 480px) {
+.collapse {
+        margin: 1rem 1rem 1rem 3rem;
+    }
+  
+}
+
+/*Media queries tablette*/
+
+@media (min-width: 481px) and (max-width: 830px) {
+.collapse {
+        margin: 1rem 2rem 1rem 6rem;
+    }
+}

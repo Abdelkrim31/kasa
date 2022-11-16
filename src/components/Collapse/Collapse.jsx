@@ -1,41 +1,27 @@
-import React, { useState, useRef, useEffect } from "react"; 
-import "../../style/main.scss";
-import Chevron from "../../assets/images/vectorBas.svg";
+import CollapseCSS from "../Collapse/Collapse.module.css"
+import { useState } from "react"
+import PropTypes from "prop-types"
+import iconCollapse from "../Images/icon-collapse.svg"
 
-export default function Collapse(props) {
-	const [toggle, setToggle] = useState(false); 
-	const [heightEl, setHeightEl] = useState(); 
+function Collapse({ title, content }) {
+  const [isOpen, setIsOpen] = useState(false)
 
-	const toggleState = () => {
-		setToggle(!toggle);
-	};
-
-	const refHeight = useRef(); 
-
-	useEffect(() => {
-		setHeightEl(`${refHeight.current.scrollHeight}px`); 
-	}, []);
-
-	return (
-		<div className={`collapse ${props.aboutStyle}`}>
-
-			<div onClick={toggleState} className="collapse__visible">
-				<h2>{props.aboutTitle}</h2>
-				<img
-					className={toggle ? "chevron rotated" : "chevron"}
-					src={Chevron}
-					alt="chevron"
-				/>
-			</div>
-
-			<div
-				ref={refHeight}
-				className={toggle ? "collapse__toggle animated" : "collapse__toggle"}
-				style={{ height: toggle ? `${heightEl}` : "0px" }}
-			>
-				<p aria-hidden={toggle ? "true" : "false"}>{props.aboutText}</p>
-			</div>
-			
-		</div>
-	);
+  return isOpen ? (
+    <div className={CollapseCSS.container}>
+      <div className={CollapseCSS.title} onClick={() => setIsOpen(false)}>
+        {title}
+        <img src={iconCollapse} className={CollapseCSS.iconOpen} alt={PropTypes} />
+      </div>
+      <div className={CollapseCSS.content}>{content}</div>
+    </div>
+  ) : (
+    <div className={CollapseCSS.container}>
+      <div className={CollapseCSS.title} onClick={() => setIsOpen(true)}>
+        {title}
+        <img src={iconCollapse} className={CollapseCSS.icon} alt={PropTypes}/>
+      </div>
+    </div>
+  )
 }
+
+export default Collapse

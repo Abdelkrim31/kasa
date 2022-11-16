@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import left from "../../assets/images/vector-left.svg";
-import right from "../../assets/images/vector-right.svg";
+import left from "../../tools/images/vector-left.svg";
+import right from "../../tools/images/vector-right.svg";
 import "../../style/main.scss";
 
 export default function Carrousel({ slides }) {

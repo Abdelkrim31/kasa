@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Collapse from "../../components/Collapse/Collapse";
 import Host from "../../components/Host/Host";
 import Rate from "../../components/Rate/Rate";
 import Tag from "../../components/Tag/Tag";
-import data from "../../datas/logements.json";
+import data from "../../data/logements.json";
 
 
 export default function PageLogement() {
