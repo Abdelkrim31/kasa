@@ -8,7 +8,7 @@ import Tag from "../../components/Tag/Tag";
 import data from "../../datas/logements.json";
 
 
-export default function FicheLogement() {
+export default function PageLogement() {
 	const params = useParams();
 
 	const navigate = useNavigate();
