@@ -1,3 +1,4 @@
+
 .card-logement {
     position: relative;
     display: flex;
@@ -47,7 +48,10 @@
     justify-content: center;
     width: 100%;
     gap: 20px;
-    @include small-radius;
+
+    /*@include small-radius;*/
+    border-radius: 10px;
+
     margin: 22px 0;
     flex-wrap: wrap;
 
@@ -55,7 +59,9 @@
         gap: 90px;
         padding: 6.5% 1%;
         background-color: #f7f7f7;
-        @include big-radius;
+        
+        /*@include big-radius;*/
+        border-radius: 25px;
         margin: 43px 0;
     }
 }

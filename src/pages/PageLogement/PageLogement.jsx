@@ -1,88 +1,44 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React from "react"
+import { Navigate, useParams } from "react-router-dom"
+import Carrousel from "../../components/Carrousel/Carrousel"
+import LogementsCSS from "../PageLogement/PageLogement.module.css"
+import HostRateTag from "../../components/HostRateTag/HostRateTag"
+import Collapse from "../../components/Collapse/Collapse"
 
-import Carrousel from "../../components/Carrousel/Carrousel";
-import Collapse from "../../components/Collapse/Collapse";
-import Host from "../../components/Host/Host";
-import Rate from "../../components/Rate/Rate";
-import Tag from "../../components/Tag/Tag";
-import data from "../../data/logements.json";
+import { DataLogements } from "../../data/DataLogements"
 
+export default function Logements() {
+  let { id } = useParams()
+  const logement = DataLogements.getOneLogement(id)
 
-export default function PageLogement() {
-	const params = useParams();
+  return (
+    <>
+      {logement ? (
+        <div>
+          <Carrousel key={logement.pictures} images={logement.pictures} />
 
-	const navigate = useNavigate();
-	const [pickedAppart, setPickedAppart] = useState();
-	useEffect(() => {
-		const getData = async () => {
-			const res = await data.find(({ id }) => id === params.id);
+          <HostRateTag key={logement.title} details={logement} />
 
-			//redirection vers la page 404 en cas d'id incorrect
-			if (res === undefined) {
-				navigate("/404", { state: { message: "Can't get data" } }); 
-			}
-			console.log("res =>", res);
-			setPickedAppart(res);
-		};
-		getData();
-		// eslint-disable-next-line
-	}, []); 
-
-	console.log("pickedAppart", pickedAppart);
-	const slidePics = pickedAppart && pickedAppart.pictures;
-	const tags = pickedAppart && pickedAppart.tags;
-	const equipments = pickedAppart && pickedAppart.equipments;
-	const equip = pickedAppart && equipments.map((item, index) => (
-			<li key={index} className="equipList">
-				{item}
-			</li>
-		));
-
-		return (
-			pickedAppart && (
-			<div key={params.id} className="fiche-container">
-				<Carrousel slides={slidePics} />
-
-				<section className="hostInfo-container">	
-					<div className="title-tags-container">
-						<div className="title-container redFont">
-							<h1>{pickedAppart.title}</h1>
-							<h3>{pickedAppart.location}</h3>
-						</div>
-	
-						<div className="tags-container">
-							{tags.map((tag) => (
-								<Tag key={tag} tag={tag} />
-							))}
-						</div>
-					</div>
-	
-					<div className="rate-host-container">
-	
-						<div className="host-container redFont">
-							<Host
-								hostName={pickedAppart.host.name}
-								hostPic={pickedAppart.host.picture}
-							/>
-						</div>
-	
-						<div className="rate-container">
-							<Rate score={pickedAppart.rating} />
-						</div>
-					</div>
-	
-				</section>
-				
-				<div className="collapse-fiche-container">
-					<Collapse 
-					 aboutTitle="Description"
-					 aboutText={pickedAppart.description}/>
-					<Collapse aboutTitle="Équipements" aboutText={equip}/>
-				</div>
-	
-			</div>
-			)
-		);
+          <div className={LogementsCSS.collapse}>
+            <Collapse
+              key={logement.description}
+              title="Description"
+              content={logement.description}
+            />
+            <Collapse
+              key={logement.equipments}
+              title="Equipments"
+              content={logement.equipments.map((infos, index) => (
+                <div key={`${logement.equipments}-${index}`}>{infos}</div>
+              ))}
+            />
+          </div>
+          
+        </div>
+      ) : (
+        <Navigate replace to="/*" />
+      )}
+    </>
+  )
 }
 

@@ -1,18 +1,24 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/*
 * {
 	box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+*/
 
 body {
-	@include body-position;
+	max-width: 768px;
+	min-width: 20px;
+	margin: auto;
 
 	@media (min-width: $breakpoint-desktop) {
 		max-width: 100%;
 	}
 }
 
+/*
 main {
 	margin: 5%;
 
@@ -20,13 +26,17 @@ main {
 		margin: 0 100px;
 	}
 }
-
+*/
 .redFont {
 	color: $primary-color;
 }
 
 .fiche-container {
-	@include flex-center;
+	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 	flex-direction: column;
 }
 
@@ -47,57 +57,5 @@ main {
 
 	@media screen and (min-width: $breakpoint-desktop) {
 		@include big-radius;
-	}
-}
-
-.errorContainer {
-	color: $primary-color;
-	@include flex-column;
-	margin: 22px 6%;
-}
-
-.errorNumber {
-	@include flex-center;
-	@include font(96px, 700);
-	margin: 12rem 0 1rem 0;
-
-	@media screen and (min-width: $breakpoint-desktop) {
-		@include font(288px, 700);
-		margin: 0;
-	}
-}
-
-%flex-error {
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-}
-
-.errorText {
-	@extend %flex-error;
-	text-align: center;
-	@include font(18px, 500);
-	margin: 0 11%;
-
-	@media screen and (min-width: $breakpoint-desktop) {
-		@include font(36px, 500);
-		margin: 0;
-	}
-}
-
-.errorLinkHome {
-	@extend %flex-error;
-	text-decoration: none;
-	color: $primary-color;
-	@include font(14px, 500);
-	margin-top: 9rem;
-
-	@media screen and (min-width: $breakpoint-desktop) {
-		@include font(18px, 500);
-	}
-
-	&:hover,
-	&:focus {
-		text-decoration-line: underline;
 	}
 }

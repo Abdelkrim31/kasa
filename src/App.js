@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home/Home"
 import PageLogement from './pages/PageLogement/PageLogement';
 import About from './pages/About/About';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Error404 from './pages/Error404/Error404';
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/logement/:id" element={<PageLogement />} />
         <Route path="/about" element={<About />} />
-        <Route path="/*" element={<ErrorPage />} />
-        <Route path="/PageLogement/*" element={<ErrorPage />} />
+        <Route path="/*" element={<Error404 />} />
+        <Route path="/PageLogement/*" element={<Error404 />} />
       </Routes>
     </div>
   );
