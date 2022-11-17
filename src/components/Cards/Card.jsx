@@ -1,5 +1,6 @@
 import React from "react";
 import "../../style/main.scss";
+
 export default function Card({ cover, title }) { 
 	return (
 		<article className="card-logement">
