@@ -3,7 +3,7 @@ import BannerCSS from "../Banner/Banner.module.css"
 function Banner({src, title, alt}) {
   return (
     <section className={BannerCSS.banner}>
-      <div className={BannerCSS.hero}>
+      <div className={BannerCSS.hero_banner}>
           <img
             src={src}
             alt={alt}

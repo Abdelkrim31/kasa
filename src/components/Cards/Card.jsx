@@ -1,13 +1,27 @@
-import React from "react";
-import "../../style/main.scss";
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import PageLogement from "../../data/logements.json"
+import CardsCSS from "../Cards/Card.module.css"
 
-export default function Card({ cover, title }) { 
-	return (
-		<article className="card-logement">
-			<img src={cover} alt="location" />
-			<div className="card-logement__layer">
-				<p className="card-logement__title">{title}</p>
-			</div>
-		</article>
-	);
+function Card() {
+  const [logement] = useState(PageLogement)
+
+  return (
+    <div className={CardsCSS.backgroundCards}>
+      {logement.map((logement) => (
+        <Link to={`/logement/${logement.id}`} key={logement.id}>
+          <div key={logement.id} className={CardsCSS.card}>
+            <img
+              src={logement.cover}
+              alt={logement.title}
+              className={CardsCSS.img}
+            />
+            <div className={CardsCSS.title}>{logement.title}</div>
+          </div>
+        </Link>
+      ))}
+    </div>
+  )
 }
+
+export default Card

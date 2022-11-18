@@ -23,7 +23,7 @@ function Carrousel({ images }) {
   
 
   return (
-    <section className={SliderCSS.container}>
+    <section className={SliderCSS.container_carrousel}>
 
       <div className={SliderCSS.slider}>
         <img
