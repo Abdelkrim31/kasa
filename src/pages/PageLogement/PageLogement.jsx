@@ -4,8 +4,7 @@ import Carrousel from "../../components/Carrousel/Carrousel"
 import LogementsCSS from "../PageLogement/PageLogement.module.css"
 import HostRateTag from "../../components/HostRateTag/HostRateTag"
 import Collapse from "../../components/Collapse/Collapse"
-
-import { DataLogements } from "../../data/DataLogements"
+import { DataLogements } from "../../data/DataLogements" // import de DataLogements à partir du dossier data 
 
 export default function Logements() {
   let { id } = useParams()
@@ -35,8 +34,8 @@ export default function Logements() {
           </div>
           
         </div>
-      ) : (
-        <Navigate replace to="/*" />
+      ) : ( //affichage conditionnel 
+        <Navigate replace to="/*" /> //renvoi vers la page 404 si l'id du logement est invalide
       )}
     </>
   )

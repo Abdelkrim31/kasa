@@ -3,22 +3,22 @@ import { useState } from "react"
 import SliderCSS from "../Carrousel/Carrousel.module.css"
 import leftArrow from "../Images/left-arrow.svg"
 import rightArrow from "../Images/right-arrow.svg"
-import PropTypes from "prop-types"
 
 function Carrousel({ images }) {
   /*Définir Hook useState pour écouter les modifications*/
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0)  // l'index du premier slide défini à 0
 
-  /*Ajout d'un const pour la longueur des données*/
+  /*Ajout d'un const pour la longueur des données : 
+  longueur du tableau de slides*/
   const length = images.length
 
   /*Fonction ajoutée pour la navigation entre les images*/
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
+    setCurrent(current === length - 1 ? 0 : current + 1) // on repart au premier slide quand on arrive au dernier
   }
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
+    setCurrent(current === 0 ? length - 1 : current - 1) // on repart au dernier slide quand on est au premier
   }
   
 
@@ -35,29 +35,29 @@ function Carrousel({ images }) {
       </div>
 
       <img
-        src={leftArrow}
+        src={leftArrow}          //Affichage des flèches seulement si length > 1 : A CONFIRMER
         className={
           images.length === 1 ? SliderCSS.leftArrowNone : SliderCSS.leftArrow
         }
         onClick={prevSlide}
-        alt={PropTypes}
+        alt="alt"
       />
-
+      
       <div
         className={
           images.length === 1 ? SliderCSS.numbInfoNone : SliderCSS.numbInfo
-        }
+        } 
       >
         {current + 1}/{images.length}
       </div>
-
+     
       <img
         src={rightArrow}
         className={
           images.length === 1 ? SliderCSS.rightArrowNone : SliderCSS.rightArrow
         }
         onClick={nextSlide}
-        alt={PropTypes}
+        alt="alt"
       />
 
     </section>
